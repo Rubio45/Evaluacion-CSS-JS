@@ -4,17 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const campos = {
         cedula: {
-            regex: /^\d{3}-\d{6}-\d{4}[A-Z]$/i,
+            regex: /^\d{3}-\d{6}-\d{4}[A-Z]$/,
             errorId: 'cedulaError',
-            mensaje: 'Formato inválido. Ejemplo: 999-999999-9999X'
+            mensaje: 'Formato inválido. Ejemplo: 999-999999-9999X (con letra mayúscula final)'
         },
         nombres: {
+            regex: /^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-ZÁÉÍÓÚÑ\s]{2,}$/,
             errorId: 'nombresError',
-            mensaje: 'Este campo es obligatorio.'
+            mensaje: 'Debe iniciar con mayúscula, tener al menos 3 letras y no contener números.'
         },
         apellidos: {
+            regex: /^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-ZÁÉÍÓÚÑ\s]{2,}$/,
             errorId: 'apellidosError',
-            mensaje: 'Este campo es obligatorio.'
+            mensaje: 'Debe iniciar con mayúscula, tener al menos 3 letras y no contener números.'
         },
         departamento: {
             errorId: 'departamentoError',
@@ -45,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let esValido = true;
 
         for (const campo in campos) {
-            const valor = document.getElementById(campo).value.trim();
+            const input = document.getElementById(campo);
+            const valor = input.value.trim();
             const { regex, mensaje } = campos[campo];
 
             if (!valor) {
