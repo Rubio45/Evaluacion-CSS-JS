@@ -1,0 +1,158 @@
+/* Seteo universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo principal con gradiente */
+body {
+    font-family: sans-serif;
+    background: linear-gradient(to right, #e0ecf8, #f0f4ff);
+    color: #2c3e50;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Encabezado */
+header, footer {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(100deg, #2980b9, #6dd5fa);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido principal */
+main {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Animación de entrada para introducir los datos */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Forms */
+form fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input[type="text"],
+textarea,
+select {
+    padding: 12px;
+    border: 2px solid #ccddee;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9fcff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #6dd5fa;
+    box-shadow: 0 0 8px rgba(109, 213, 250, 0.6);
+    background-color: #ffffff;
+}
+
+/* Botón */
+button {
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #1e90ff, #00c6ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+}
+
+/* Errores */
+.error {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+    animation: fadeInError 0.3s ease;
+}
+
+@keyframes fadeInError {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tabla de registros */
+#tablaVisitantesSection {
+    margin-top: 40px;
+}
+
+#tablaVisitantes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#tablaVisitantes th,
+#tablaVisitantes td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+#tablaVisitantes tbody tr {
+    background-color: #f8fbff;
+    transition: background-color 0.3s ease;
+}
+
+#tablaVisitantes tbody tr:hover {
+    background-color: #e0f0ff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
